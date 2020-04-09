@@ -1,0 +1,44 @@
+.cuandollega {
+  border-collapse: collapse!important;
+}
+
+.cuandollega .small {
+  font-size: 14px;
+}
+
+.cuandollega .medium {
+  font-size: 20px;
+}
+
+.cuandollega tr.last {
+  border-bottom: 1px solid gray;
+}
+
+.cuandollega td.bus-line {
+  color: white;
+  padding-right: 1em;
+  text-align: left;
+}
+.cuandollega td.bus-symbol {
+  padding-right: 0.2em;
+}
+
+.cuandollega td.bus-distance {
+  padding-right: 0.5em;
+}
+
+.cuandollega td.arriving {
+  color: red;
+}
+
+.cuandollega td.close {
+  color: yellow;
+}
+
+.cuandollega td.faraway {
+  color: green;
+}
+
+.cuandollega td.number {
+  text-align: right;
+}
