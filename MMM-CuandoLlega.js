@@ -52,7 +52,10 @@ Module.register("MMM-CuandoLlega", {
     }
     var self = this
     setInterval(function() {
-      self.getBusInfo()
+      self.busesInfo = [] // prevent redrawing twice the same info
+      self.config.buses.forEach(info => {
+        self.getBusInfo(info)
+      })
     }, nextLoad)
   },
 
@@ -63,8 +66,10 @@ Module.register("MMM-CuandoLlega", {
   socketNotificationReceived: function(notification, payload) {
     var self = this
     if (notification === "BUS_RESULT") {
-      this.busesInfo.push(payload)
-      this.updateDom(self.config.fadeSpeed)
+      if (payload.length !== 0) { // update DOM only if it's needed
+        this.busesInfo.push(payload)
+        this.updateDom(self.config.fadeSpeed)
+      }
     }
   },
 
