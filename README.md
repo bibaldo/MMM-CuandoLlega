@@ -1,2 +1,78 @@
 # MMM-CuandoLlega
-A MagicMirror² helper module
+A [MagicMirror²](https://magicmirror.builders) helper module to track reported cases of CuandoLlega.
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/bibaldo/MMM-CuandoLlega/master/LICENSE)
+
+![Example](.github/example.png) 
+
+## Installation
+
+In your terminal, go to your MagicMirror's Module folder:
+````
+cd ~/MagicMirror/modules
+````
+
+Clone this repository:
+````
+git clone https://github.com/bibaldo/MMM-CuandoLlega.git
+````
+
+Add the module to the modules array in the `config/config.js` file:
+````javascript
+  {
+    module: "MMM-CuandoLlega"
+  },
+````
+
+## Configuration options
+
+The following properties can be configured:
+
+
+| Option                       | Description
+| ---------------------------- | -----------
+| `header`                     | The header text <br><br> **Default value:** `'Cuando Llega'`
+| `buses`                      | The lines (Buses) that we want to get live information <br><br> **Default value:** `[ { line: '120', stop: 8317 }, { line: '153 N', stop: 4146 }, { line: '153 R', stop: 4146 } ]`
+| `mmLocation`                 | Where your MagicMirror is located <br> **Default value:** `[ -32.9536595, -60.6431701 ]` // [ latitude, longitude ]
+| `infoClass`                  | The font size of data <br><br> **Possible values:** `'small'`, `'medium'`, `'big'` <br> **Default value:** `'big'`
+| `updateInterval`             | How often does the content needs to be fetched (milliseconds) <br><br> **Possible values:** `1000` - `86400000` <br> **Default value:** `30000` (30 seconds)
+
+## Config Example
+
+````javascript
+  {
+    module: "MMM-CuandoLlega",
+    position: "top_right",
+    config: {
+      header: 'Cuando Llega',
+      buses: [
+        {
+          line: '120', // 120 Único
+          stop: 8317
+        },
+        {
+          line: '153 N', // 153 Negra
+          stop: 4146
+        },
+        {
+          line: '153 R', // 153 Roja
+          stop: 4146
+        }
+      ],
+      mmLocation: [ -32.9536595, -60.6431701 ],
+      updateInterval: 60000,
+      fadeSpeed: 4000,
+      infoClass: 'big'
+    }
+  },
+````
+
+## Updating
+
+To update the module to the latest version, use your terminal to go to your MMM-CuandoLlega module folder and type the following command:
+
+````
+git pull
+```` 
+
+Feel free to open any Issue :smiley:
