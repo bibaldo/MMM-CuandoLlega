@@ -44,6 +44,15 @@ Module.register("MMM-CuandoLlega", {
 
     this.scheduleUpdate()
   },
+  // https://docs.magicmirror.builders/development/core-module-file.html#suspend
+  // used in combination with ModuleScheduler in order to halt the timers
+  suspend: function() {
+    window.clearInterval(this.intervalID)
+  },
+
+  resume: function() {
+    this.scheduleUpdate()
+  },
 
   scheduleUpdate: function(delay) {
     var nextLoad = this.config.updateInterval
@@ -51,7 +60,7 @@ Module.register("MMM-CuandoLlega", {
       nextLoad = delay
     }
     var self = this
-    setInterval(function() {
+    this.intervalID = setInterval(function() {
       self.busesInfo = [] // prevent redrawing twice the same info
       self.config.buses.forEach(info => {
         self.getBusInfo(info)
