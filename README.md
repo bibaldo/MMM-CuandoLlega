@@ -1,5 +1,9 @@
 # MMM-CuandoLlega
-A [MagicMirror²](https://magicmirror.builders) helper module to track reported cases of CuandoLlega.
+A [MagicMirror²](https://magicmirror.builders) helper module to get estimated arrival times from Rosario, Santa Fe, Argentina buses.
+
+The module uses rosario.gob.ar's API published at https://editor.swagger.io/?url=https://ws.rosario.gob.ar/ubicaciones/v2/api-docs/
+
+You can see an example here: https://ws.rosario.gob.ar/ubicaciones/public/cuandollega?parada=1847&linea=K
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/bibaldo/MMM-CuandoLlega/master/LICENSE)
 
