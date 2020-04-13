@@ -110,7 +110,8 @@ Module.register("MMM-CuandoLlega", {
           busDistanceCell = document.createElement("td"),
           busMinutesCell = document.createElement("td");
         
-        busRow.className = first ? '' : 'last'
+        if (nearBuses.length == 1) busRow.className = 'last' // some lines could have only 1 arrival time
+        else busRow.className = first ? '' : 'last'
         busSymbolCell.innerHTML = first ? '<i class="fas fa-bus"></i>' : ''
         busSymbolCell.className = 'bus-symbol'
         busLineCell.innerHTML = first ? lineInfo['nombreCorto'] : ''
