@@ -79,4 +79,10 @@ To update the module to the latest version, use your terminal to go to your MMM-
 git pull
 ```` 
 
+
+## Extra notes
+
+I use this module in combination with `MMM-ModuleScheduler`, so I can have this module pulling the info of the buses during a fixed time per day. In my case it is only from 06:20am to 07:05am, every weekday. You should read the `MMM-ModuleScheduler` documentation in order to accomplish this.
+
+
 Feel free to open any Issue :smiley:
